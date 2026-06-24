@@ -1,2 +1,222 @@
-<link rel="stylesheet" href="./css/style.css">
-<script src="./js/main.js" defer></script>
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>Portfolio</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/main.js" defer></script>
+    </head>
+    <body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="주요 메뉴">
+            <a href="#hero" class="logo">My Portfolio</a>
+
+            <button 
+                type="button"
+                class="hamburger-button"
+                aria-label="메뉴 열기"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button
+                type="button"
+                class="theme-toggle-button"
+                aria-label="다크 모드 전환"
+            >
+            🌙
+            </button>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <section id="hero" class="hero section">
+            <div class="container hero-content">
+                <p class="hero-subtitle">Hello, I'm</p>
+                <h1 class="hero-title">Kim Yejoo</h1>
+
+                <p class="hero-typing" aria-label="소개 문구">
+                    <span class="typing-text">Java와 Spring을 공부하며 성장하는 백엔드 학습자</span>
+                    <span class="typing-cursor" aria-hidden="true">|</span>
+                </p>
+
+                <p class="hero-description">
+                    Java와 Spring을 중심으로 백엔드 개발을 공부하며, 웹 서비스가 사용자 화면에서 서버와 데이터까지 이어지는 흐름을 이해하기 위해 
+                    HTML, CSS, JavaScript의 기본기도 함께 학습하고 있습니다.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="button primary-button">View Projects</a>
+                    <a href="#contact" class="button secondary-button">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+
+                <div class="about-content">
+                    <img
+                        src="./image/profile.webp"
+                        alt="김예주의 프로필 사진"
+                        class="profile-image"
+                    >
+                    
+                    <div class="about-text">
+                        <p>
+                            안녕하세요. 저는 Java와 Spring을 중심으로 백엔드 개발을 공부하고 있는 학습자입니다.
+                        </p>
+                        <p>
+                            웹 서비스가 클라이언트 화면에서 서버, 데이터 처리까지 어떻게 이어지는지 이해하기 위해 
+                            HTML, CSS, JavaScript의 기본기를 함께 학습하고 있습니다.
+                        </p>
+                        <p>
+                            이번 포트폴리오 프로젝트에서는 DOM 조작, 이벤트 처리, 비동기 API 연동, 로컬스토리지 상태 유지, 반응형 레이아웃을 
+                            직접 구현해보며 웹의 전체 흐름을 익히고 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section">
+            <div class="container skills-content">
+                <h2 class="section-title">Skills</h2>
+                
+                <ul class="skill-list">
+                    <li class="skill-item">Java</li>
+                    <li class="skill-item">Spring</li>
+                    <li class="skill-item">HTML</li>
+                    <li class="skill-item">CSS</li>
+                    <li class="skill-item">JavaScript</li> 
+                    <li class="skill-item">DOM</li>
+                    <li class="skill-item">Git</li> 
+                    <li class="skill-item">GitHub</li>
+                    <li class="skill-item">Fetch API</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section">
+            <div class="container projects-content">
+                <h2 class="section-title">Projects</h2>
+
+                <p class="section-description">
+                    GitHub API에서 가져온 저장소 목록입니다.
+                </p>
+
+                <div class="project-filter">
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-language="all"
+                    >
+                        ALL
+                    </button>
+                </div>
+
+                <div class="project-status" aria-live="polite">
+                    <p class="loading-message">프로젝트 불러오는 중...</p>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Project Name</h3>
+                        <p>Repository Description</p>
+                        <p>Language: Java</p>
+                        <a href="..." target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+
+                <form class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="이름을 입력하세요"
+                        >
+                        <p class="error-message" data-error-for="name" aria-live="polite"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input  
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="email@example.com"
+                        >
+                        <p class="error-message" data-error-for="email" aria-live="polite"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">메시지</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="메시지를 입력하세요"
+                        ></textarea>
+                        <p class="error-message" data-error-for="message" aria-live="polite"></p>
+                    </div>
+
+                    <button type="submit" class="button primary-button">
+                        Send Message
+                    </button>
+
+                    <p class="form-success-message" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© 2026 Kim Yejoo. All rights reserved.</p>
+
+            <a 
+                href="https://github.com/yejoo0310"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+        </div>
+    </footer>
+    
+    <button   
+        type="button"
+        class="scroll-top-button"
+        aria-label="맨 위로 이동"
+    >
+        ↑
+    </button>
+
+    </body>
+</html>
