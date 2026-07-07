@@ -71,9 +71,10 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
-}
-
+  }
+  
 body {
+    min-width: 360px;
     margin: 0;
     font-family: var(--font-main);
     background-color: var(--color-bg);
