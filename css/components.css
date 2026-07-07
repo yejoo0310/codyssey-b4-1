@@ -137,14 +137,6 @@
   background-color: var(--color-text-muted);
 }
 
-/* 현재 보고 있는 섹션의 네비게이션 표시 */
-.nav-link.active,
-.nav-link[aria-current="page"] {
-  color: var(--color-primary);
-  background-color: var(--color-surface-soft);
-}
-
-
 /* Button */
 
 .button {
