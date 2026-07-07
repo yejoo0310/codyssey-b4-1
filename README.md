@@ -28,7 +28,13 @@
 │   └── semantic-tag.png
 ├── index.html
 ├── js
-│   └── main.js
+│   ├── animation.js
+│   ├── contact.js
+│   ├── dom.js
+│   ├── main.js
+│   ├── menu.js
+│   ├── projects.js
+│   └── theme.js
 └── README.md
 ```
 
