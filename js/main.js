@@ -217,7 +217,7 @@ revealElements.forEach((element) => {
    7. Contact 폼 유효성 검사 + Formspree로 폼 실제 전송
 ========================= */
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 const setError = (inputElement, errorElement, message) => {
   inputElement.classList.add("error");
@@ -477,7 +477,7 @@ const bindProjectFilterEvents = () => {
 };
 
 // test
-PROJECT_DEMO_STATE = ''
+PROJECT_DEMO_STATE = "";
 
 // loading test용 delay 함수
 const delay = (ms) => {
@@ -487,20 +487,20 @@ const delay = (ms) => {
 };
 
 const fetchGitHubProjects = async () => {
-  if (PROJECT_DEMO_STATE === 'loading') {
-    projectFilters.innerHTML = '';
+  if (PROJECT_DEMO_STATE === "loading") {
+    projectFilters.innerHTML = "";
     renderProjectLoading();
     return;
   }
 
-  if (PROJECT_DEMO_STATE === 'empty') {
-    projectFilters.innerHTML = '';
+  if (PROJECT_DEMO_STATE === "empty") {
+    projectFilters.innerHTML = "";
     renderProjectEmpty();
     return;
   }
 
-  if (PROJECT_DEMO_STATE === 'error') {
-    projectFilters.innerHTML = '';
+  if (PROJECT_DEMO_STATE === "error") {
+    projectFilters.innerHTML = "";
     renderProjectError();
     return;
   }
