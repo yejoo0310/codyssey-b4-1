@@ -1,0 +1,255 @@
+/* Header / Navigation */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 100;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+    width: min(100% - 4rem, var(--container-width));
+    height: 100%;
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-weight: 700;
+}
+
+.brand-mark {
+    background-color: var(--color-primary);
+    color: white;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.nav-menu {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+
+    position: absolute;
+    top: calc(var(--header-height) + 0.75rem);
+    left: 1rem;
+    right: 1rem;
+
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    display: none;
+}
+
+.nav-menu.active {
+    display: block;
+}
+
+.nav-menu li + li {
+  margin-top: var(--space-xs);
+}
+
+.nav-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-link:hover {
+  background-color: var(--color-surface-soft);
+  color: var(--color-primary);
+}
+
+.theme-toggle-button, .hamburger-button {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+
+    width: 42px;
+    height: 42px;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-toggle-button:hover,
+.hamburger-button:hover {
+  background-color: var(--color-surface-soft);
+  transform: translateY(-2px);
+}
+
+.hamburger-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.hamburger-button span {
+    background-color: currentColor;
+    width: 18px;
+    height: 2px;
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* aria-expanded가 true일 때 햄버거 버튼을 X 모양으로 변경 */
+.hamburger-button[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-button[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 스크롤 60px 이상일 때 헤더 스타일 변경 */
+.site-header.scrolled {
+  background-color: var(--color-text-muted);
+}
+
+/* 현재 보고 있는 섹션의 네비게이션 표시 */
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  color: var(--color-primary);
+  background-color: var(--color-surface-soft);
+}
+
+
+/* Button */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+
+    font-weight: 700;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}   
+
+.primary-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.secondary-button:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: var(--space-lg);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.footer-content a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Scroll Top Button */
+
+.scroll-top-button {
+  position: fixed;
+  z-index: 50;
+  right: 1rem;
+  bottom: 1rem;
+
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius-full);
+
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.25rem;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+
+/* JS에서 visible 클래스를 붙이면 보이도록 */
+.scroll-top-button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-button:hover {
+  background-color: var(--color-primary-dark);
+}

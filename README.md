@@ -10,6 +10,11 @@
 ```
 .
 ├── css
+│   ├── base.css
+│   ├── components.css
+│   ├── layout.css
+│   ├── responsive.css
+│   ├── sections.css
 │   └── style.css
 ├── images
 │   ├── profile.webp

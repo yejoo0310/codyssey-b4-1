@@ -1,0 +1,97 @@
+/* 태블릿 반응형: 768px 이상 */
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 5rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  /* 태블릿부터 메뉴를 항상 보여줌 */
+  .nav-menu {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .nav-menu li + li {
+    margin-top: 0;
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-description {
+    margin-inline: 0;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .about-content {
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+  }
+
+  .profile-image {
+    width: 260px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact .container {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+
+/* 데스크톱 반응형: 1024px 이상 */
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .section {
+    padding-block: 6rem;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-typing {
+    font-size: 1.25rem;
+  }
+
+  .about-content {
+    gap: 4rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
