@@ -152,13 +152,6 @@ const bindProjectFilterEvents = () => {
   });
 };
 
-// loading test용 delay 함수
-const delay = (ms) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-};
-
 export const fetchGitHubProjects = async () => {
   if (PROJECT_DEMO_STATE === "loading") {
     projectFilters.innerHTML = "";
@@ -180,10 +173,6 @@ export const fetchGitHubProjects = async () => {
 
   try {
     renderProjectLoading();
-
-    // 로딩 상태 확인용 지연 시간
-    await delay(1500);
-
     const response = await fetch(GITHUB_REPOS_URL);
 
     // 테스트용: 레이트 리밋 상황을 강제로 만든다.
